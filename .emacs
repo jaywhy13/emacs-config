@@ -23,6 +23,8 @@
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
     elpy                            ;; Emacs Lisp Python Environment
+    flycheck                        ;; On the fly syntax checking    
+    blacken                         ;; Black formatting on save
     material-theme                  ;; Theme
     )
   )
@@ -47,6 +49,11 @@
 ;; ====================================
 ;; Enable elpy
 (elpy-enable)
+
+;; Enable Flycheck - remove flymake and replace it with fly check
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; User-Defined init.el ends here
 (custom-set-variables
