@@ -23,6 +23,7 @@
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
     projectile                      ;; Projects for emacs
+    counsel-projectile              ;; Support for better completion for projectile using Ivy
     elpy                            ;; Emacs Lisp Python Environment
     flycheck                        ;; On the fly syntax checking    
     blacken                         ;; Black formatting on save
@@ -58,7 +59,6 @@
 
 ;; Enable projectile
 (projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;; Tell projectile to search this folder for projects
 (setq projectile-project-search-path '("~/code/"))
