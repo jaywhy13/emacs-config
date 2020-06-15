@@ -34,12 +34,15 @@
 	- [ ] Prettier
 	- [ ] ES / TS Lint
 - [ ] Git
-	- [ ] History
-	- [ ] Blame
-	- [ ] Open commit in Github
-  - [ ] Stage / unstage files
-  - [ ] Commit
-  - [ ] Push / pull
+  - [ ] Features
+    - [ ] History
+    - [ ] Blame
+    - [ ] Open commit in Github
+    - [ ] Stage / unstage files
+    - [ ] Commit
+    - [ ] Push / pull
+  - [ ] Extensions
+    - [ ] Magit
 - [ ] CSS
 	- [ ] Class completion
 
@@ -56,3 +59,8 @@
   - Blacken - formatting with black
   - Flycheck - syntax checks
 
+## Issues
+- https://melpa.org/packages/ivy-20160818.708.tar: Not found. Package listing
+  was out of date. Was resolved by doing `M-x package-refresh-contents`
+- `neotree-projectile-action` is not reliably triggered when changing projects
+  with Projectile.
