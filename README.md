@@ -3,6 +3,11 @@
 ## TODO
 - [ ] General
     - [ ] Sidebar navigation
+      - [ ] Investigate Neotree
+        - [ ] Add icons using all-the-icons
+    - [ ] Status bar
+      - [ ] Investigate Spaceline
+      - [ ] Investigate modeline
     - [ ] Embedded terminal (toggle terminal size)
     - [ ] Descent theme (e.g VSCode Dark+)
     - [ ] Fira Code font / font size
@@ -32,6 +37,9 @@
 	- [ ] History
 	- [ ] Blame
 	- [ ] Open commit in Github
+  - [ ] Stage / unstage files
+  - [ ] Commit
+  - [ ] Push / pull
 - [ ] CSS
 	- [ ] Class completion
 
@@ -47,5 +55,4 @@
   - Elpy - virtual env support, autocompletion, jump to defn, etc... (disabled flymake module)
   - Blacken - formatting with black
   - Flycheck - syntax checks
- 
-  
+
