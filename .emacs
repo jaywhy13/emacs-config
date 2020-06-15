@@ -62,7 +62,8 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;; Tell projectile to search this folder for projects
 (setq projectile-project-search-path '("~/code/"))
-
+;; Start counsel-projectile by default for better filtering of projects and filenames
+(counsel-projectile-mode)
 
 ;; User-Defined init.el ends here
 (custom-set-variables
