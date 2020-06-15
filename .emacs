@@ -22,6 +22,8 @@
 ;; myPackages contains a list of package names
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
+    neotree                         ;; Sidebar navigation for Emacs
+    all-the-icons                   ;; Icons
     projectile                      ;; Projects for emacs
     counsel-projectile              ;; Support for better completion for projectile using Ivy
     elpy                            ;; Emacs Lisp Python Environment
@@ -45,6 +47,16 @@
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (load-theme 'material t)            ;; Load material theme
 (global-linum-mode t)               ;; Enable line numbers globally
+
+;; Setup icons
+(require 'all-the-icons)
+
+;; Setup neotree file navigation
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-theme (if (display-graphic-p) 'ascii 'arrow))
+;; Change the project root when projectile changes it
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; ====================================
 ;; Development Setup
