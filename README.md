@@ -1,0 +1,34 @@
+# Emacs Configuration
+
+## TODO
+- [ ] General
+    - [ ] Sidebar navigation
+    - [ ] Embedded terminal (toggle terminal size)
+    - [ ] Descent theme (e.g VSCode Dark+)
+    - [ ] Fuzzy find files
+    - [ ] Setting synchronization
+    - [ ] Breadcrumb navigation
+    - [ ] Project management (open projects with one command)
+    - [ ] Multiple cursors
+    - [ ] Jira
+    - [ ] Protobuf
+    - [ ] GraphQL
+    - [ ] Dash integration
+    - [ ] Show date & time / weather
+    - [ ] Python IDE Features
+    - [ ] Autocomplete of functions and arguments
+    - [ ] Jump to definition
+    - [ ] Django syntax highlighting
+    - [ ] Linting with mypy, flake8
+    - [ ] Virtualenv Support
+- [ ] Javascript / Typescript
+	- [ ] Autocomplete
+	- [ ] Jump to definition
+	- [ ] Prettier
+	- [ ] ES / TS Lint
+- [ ] Git
+	- [ ] History
+	- [ ] Blame
+	- [ ] Open commit in Github
+- [ ] CSS
+	- [ ] Class completion
