@@ -22,6 +22,8 @@
 ;; myPackages contains a list of package names
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
+    projectile                      ;; Projects for emacs
+    counsel-projectile              ;; Support for better completion for projectile using Ivy
     elpy                            ;; Emacs Lisp Python Environment
     flycheck                        ;; On the fly syntax checking    
     blacken                         ;; Black formatting on save
@@ -54,6 +56,13 @@
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; Tell projectile to search this folder for projects
+(setq projectile-project-search-path '("~/code/"))
+
 
 ;; User-Defined init.el ends here
 (custom-set-variables
