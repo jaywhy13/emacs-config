@@ -5,10 +5,11 @@
     - [ ] Sidebar navigation
     - [ ] Embedded terminal (toggle terminal size)
     - [ ] Descent theme (e.g VSCode Dark+)
-    - [ ] Fuzzy find files
+    - [ ] Fira Code font / font size
+    - [x] Fuzzy find files
     - [ ] Setting synchronization
     - [ ] Breadcrumb navigation
-    - [ ] Project management (open projects with one command)
+    - [x] Project management (open projects with one command)
     - [ ] Multiple cursors
     - [ ] Jira
     - [ ] Protobuf
@@ -16,11 +17,12 @@
     - [ ] Dash integration
     - [ ] Show date & time / weather
     - [ ] Python IDE Features
-    - [ ] Autocomplete of functions and arguments
-    - [ ] Jump to definition
-    - [ ] Django syntax highlighting
-    - [ ] Linting with mypy, flake8
-    - [ ] Virtualenv Support
+          - [x] Autocomplete of functions and arguments
+          - [x] Jump to definition
+	  - [ ] Django syntax highlighting
+	  - [ ] Linting with mypy, flake8
+	  - [x] Virtualenv Support
+	    - [ ] Need to add autodiscovery of virtual envs
 - [ ] Javascript / Typescript
 	- [ ] Autocomplete
 	- [ ] Jump to definition
@@ -32,3 +34,18 @@
 	- [ ] Open commit in Github
 - [ ] CSS
 	- [ ] Class completion
+
+
+## Extensions
+
+- Look and feel
+  - Material theme
+- Project Management
+  - Projectile - manage project
+    - Counsel-Projectile - better searching (fuzzy load projects and files)
+- Python
+  - Elpy - virtual env support, autocompletion, jump to defn, etc... (disabled flymake module)
+  - Blacken - formatting with black
+  - Flycheck - syntax checks
+ 
+  
