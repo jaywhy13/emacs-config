@@ -22,8 +22,8 @@
 ;; myPackages contains a list of package names
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
+    use-package                     ;; Install use package
     neotree                         ;; Sidebar navigation for Emacs
-    all-the-icons                   ;; Icons
     projectile                      ;; Projects for emacs
     counsel-projectile              ;; Support for better completion for projectile using Ivy
     elpy                            ;; Emacs Lisp Python Environment
@@ -40,6 +40,8 @@
             (package-install package)))
       myPackages)
 
+(require 'use-package)
+
 ;; ===================================
 ;; Basic Customization
 ;; ===================================
@@ -49,7 +51,28 @@
 (global-linum-mode t)               ;; Enable line numbers globally
 
 ;; Setup icons
-(require 'all-the-icons)
+(use-package all-the-icons
+  :ensure t)
+
+;; Doom Themes
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config))
+
+;; Doom modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-icon (display-graphic-p))
+  )
+
+
 
 ;; Setup neotree file navigation
 (require 'neotree)
@@ -58,11 +81,17 @@
 ;; Change the project root when projectile changes it
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
+;; Install which key for helping with keybindings
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
 ;; ====================================
 ;; Development Setup
 ;; ====================================
 ;; Enable elpy
 (elpy-enable)
+
 
 ;; Enable Flycheck - remove flymake and replace it with fly check
 (when (require 'flycheck nil t)
@@ -83,7 +112,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (material-theme better-defaults))))
+ '(package-selected-packages (quote (doom-modeline material-theme better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
