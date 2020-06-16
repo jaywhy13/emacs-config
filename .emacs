@@ -74,10 +74,12 @@
   :ensure t
   :init (doom-modeline-mode 1)
   :config
-  (setq doom-modeline-height 25)
+  (setq doom-modeline-height 35)                  ;; modeline height
+  ;; Display icons in the modeline
   (setq doom-modeline-icon (display-graphic-p))
+  ;; Whether display the icon for `major-mode'. It respects `doom-modeline-icon'.
+  (setq doom-modeline-major-mode-icon t)
   )
-
 
 
 ;; Setup neotree file navigation
