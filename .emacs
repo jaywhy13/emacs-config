@@ -22,6 +22,7 @@
 ;; myPackages contains a list of package names
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
+    use-package                     ;; Install use package
     neotree                         ;; Sidebar navigation for Emacs
     all-the-icons                   ;; Icons
     projectile                      ;; Projects for emacs
@@ -39,6 +40,8 @@
           (unless (package-installed-p package)
             (package-install package)))
       myPackages)
+
+(require 'use-package)
 
 ;; ===================================
 ;; Basic Customization
