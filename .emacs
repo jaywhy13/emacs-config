@@ -50,6 +50,12 @@
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (load-theme 'material t)            ;; Load material theme
 (global-linum-mode t)               ;; Enable line numbers globally
+(tool-bar-mode -1)                  ;; Disable the toolbar
+(scroll-bar-mode -1)                ;; Disable the mode
+(global-hl-line-mode +1)            ;; Highlight the current line
+(delete-selection-mode 1)           ;; Delete selected text
+
+
 
 ;; Setup icons
 (use-package all-the-icons
