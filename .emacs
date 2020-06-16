@@ -54,6 +54,26 @@
 (use-package all-the-icons
   :ensure t)
 
+;; Doom Themes
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config))
+
+;; Doom modeline
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-icon (display-graphic-p))
+  )
+
+
+
 ;; Setup neotree file navigation
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
