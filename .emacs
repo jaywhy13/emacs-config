@@ -61,6 +61,11 @@
 ;; Change the project root when projectile changes it
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
+;; Install which key for helping with keybindings
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+
 ;; ====================================
 ;; Development Setup
 ;; ====================================
