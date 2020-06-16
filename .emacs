@@ -23,7 +23,6 @@
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
     use-package                     ;; Install use package
-    magit                           ;; Git
     neotree                         ;; Sidebar navigation for Emacs
     projectile                      ;; Projects for emacs
     counsel-projectile              ;; Support for better completion for projectile using Ivy
@@ -94,7 +93,11 @@
   :config (which-key-mode))
 
 ;; Setup magit
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
+
 
 
 ;; ====================================
