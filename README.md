@@ -12,6 +12,8 @@
     - [ ] Descent theme (e.g VSCode Dark+)
     - [ ] Fira Code font / font size
     - [x] Fuzzy find files
+    - [ ] Search all files
+      - [x] Accomplished using Counsel-Projectile (C-c C-p s i)
     - [ ] Setting synchronization
     - [ ] Breadcrumb navigation
     - [x] Project management (open projects with one command)

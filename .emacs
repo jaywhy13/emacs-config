@@ -23,11 +23,12 @@
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
     use-package                     ;; Install use package
+    magit                           ;; Git
     neotree                         ;; Sidebar navigation for Emacs
     projectile                      ;; Projects for emacs
     counsel-projectile              ;; Support for better completion for projectile using Ivy
     elpy                            ;; Emacs Lisp Python Environment
-    flycheck                        ;; On the fly syntax checking    
+    flycheck                        ;; On the fly syntax checking
     blacken                         ;; Black formatting on save
     material-theme                  ;; Theme
     )
@@ -85,6 +86,10 @@
 (use-package which-key
   :ensure t
   :config (which-key-mode))
+
+;; Setup magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 
 ;; ====================================
 ;; Development Setup
