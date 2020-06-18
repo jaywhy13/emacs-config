@@ -52,6 +52,8 @@
 (delete-selection-mode 1)           ;; Delete selected text
 
 
+(add-to-list 'default-frame-alist
+	     '(font . "Fira Code-16"))
 
 ;; Setup icons
 (use-package all-the-icons
