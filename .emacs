@@ -23,7 +23,6 @@
 (defvar myPackages
   '(better-defaults                 ;; Set up some better Emacs defaults
     use-package                     ;; Install use package
-    projectile                      ;; Projects for emacs
     elpy                            ;; Emacs Lisp Python Environment
     flycheck                        ;; On the fly syntax checking
     blacken                         ;; Black formatting on save
@@ -113,12 +112,24 @@
   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; Enable projectile
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-;; Tell projectile to search this folder for projects
-(setq projectile-project-search-path '("~/code/" "~/wave/src"))
-;; Start counsel-projectile by default for better filtering of projects and filenames
-(counsel-projectile-mode)
+(use-package projectile
+  :ensure t
+  :config
+
+  ;; Tell projectile to search this folder for projects
+  (setq projectile-project-search-path '("~/code/" "~/wave/src"))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+
+;; Enable projectile
+(use-package helm-projectile
+  :ensure t
+  :config
+  (helm-projectile-on))
+
+;; Install helm-ag
+(use-package helm-ag
+  :ensure t)
 
 ;; User-Defined init.el ends here
 (custom-set-variables
