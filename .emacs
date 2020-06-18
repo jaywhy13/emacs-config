@@ -128,6 +128,12 @@
 (use-package helm-ag
   :ensure t)
 
+;; Shell
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize)))
 ;; User-Defined init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
