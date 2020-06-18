@@ -81,6 +81,8 @@
   (setq doom-modeline-icon (display-graphic-p))
   ;; Whether display the icon for `major-mode'. It respects `doom-modeline-icon'.
   (setq doom-modeline-major-mode-icon t)
+  ;; The maximum displayed length of the branch name of version control.
+  (setq doom-modeline-vcs-max-length 50)
   )
 
 
