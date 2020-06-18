@@ -5,6 +5,8 @@
     - [ ] Sidebar navigation
       - [ ] Investigate Neotree
         - [ ] Add icons using all-the-icons
+      - [ ] Investigate Treemacs
+        - [ ] Change tree when new project is selected
     - [ ] Status bar
       - [ ] Investigate Spaceline
       - [ ] Investigate modeline
@@ -14,6 +16,7 @@
     - [x] Fuzzy find files
     - [ ] Search all files
       - [x] Accomplished using Counsel-Projectile (C-c C-p s i)
+      - [ ] Search for the current symbol
     - [ ] Setting synchronization
     - [ ] Breadcrumb navigation
     - [x] Project management (open projects with one command)
@@ -30,6 +33,8 @@
 	  - [ ] Linting with mypy, flake8
 	  - [x] Virtualenv Support
 	    - [ ] Need to add autodiscovery of virtual envs
+    - [ ] Navigation
+      - [ ] Go back
 - [ ] Javascript / Typescript
 	- [ ] Autocomplete
 	- [ ] Jump to definition
