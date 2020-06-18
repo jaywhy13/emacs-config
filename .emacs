@@ -153,7 +153,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (doom-modeline material-theme better-defaults))))
+ '(package-selected-packages
+   (quote
+    (pyenv-mode treemacs-projectile treemacs exec-path-from-shell helm-ag helm-projectile doom-modeline material-theme better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
