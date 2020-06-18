@@ -50,8 +50,6 @@
 (scroll-bar-mode -1)                ;; Disable the mode
 (global-hl-line-mode +1)            ;; Highlight the current line
 (delete-selection-mode 1)           ;; Delete selected text
-
-
 (add-to-list 'default-frame-alist
 	     '(font . "Fira Code-16"))
 (setq
@@ -86,13 +84,6 @@
   )
 
 
-;; Setup neotree file navigation
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'ascii 'arrow))
-;; Change the project root when projectile changes it
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
 ;; Install which key for helping with keybindings
 (use-package which-key
   :ensure t
@@ -103,7 +94,6 @@
   :ensure t
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
-
 
 
 ;; ====================================
