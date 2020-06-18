@@ -134,6 +134,19 @@
   :config
   (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize)))
+;; Install treemacs
+(use-package treemacs
+  :ensure t
+  :bind
+  (:map global-map
+	([f8] . treemacs)
+	("M-<f8>" . treemacs-select-window))
+  :config
+  (setq treemacs-is-never-other-window t))
+
+(use-package treemacs-projectile
+  :ensure t)
+
 ;; User-Defined init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
