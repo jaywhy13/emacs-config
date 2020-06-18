@@ -54,6 +54,9 @@
 
 (add-to-list 'default-frame-alist
 	     '(font . "Fira Code-16"))
+(setq
+   backup-directory-alist
+    '(("." . "~/.saves/")))    ; don't litter my fs tree
 
 ;; Setup icons
 (use-package all-the-icons
