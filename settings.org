@@ -1,0 +1,216 @@
+Emacs Configuration
+
+
+* General Settings
+
+** Don't show startup message
+   
+   #+BEGIN_SRC emacs-lisp
+   (setq inhibit-startup-message t)
+   #+END_SRC
+
+** Show line numbers globally
+
+   #+BEGIN_SRC emacs-lisp
+   (global-linum-mode t)               ;; Enable line numbers globally
+   #+END_SRC
+
+** Disable the toolbar
+   #+BEGIN_SRC emacs-lisp
+   (tool-bar-mode -1)                  ;; Disable the toolbar
+   #+END_SRC
+
+
+** Disable the scrollbar
+   #+BEGIN_SRC emacs-lisp
+   (scroll-bar-mode -1)                ;; Disable the mode
+   #+END_SRC
+
+** Highlight the current line
+   
+   #+BEGIN_SRC emacs-lisp
+   (global-hl-line-mode +1)            ;; Highlight the current line
+   #+END_SRC
+
+** Delete selected text
+
+   #+BEGIN_SRC emacs-lisp
+   (delete-selection-mode 1)           ;; Delete selected text
+   #+END_SRC
+
+** Save backup files in a folder
+
+   #+BEGIN_SRC emacs-lisp
+   (setq
+     backup-directory-alist
+     '(("." . "~/.saves/")))    ; don't litter my fs tree
+   #+END_SRC
+
+
+* UI / Themes
+
+** Set the default font
+
+   #+BEGIN_SRC emacs-lisp
+   (add-to-list 'default-frame-alist
+	     '(font . "Fira Code-16"))
+
+   #+END_SRC
+
+** Setup icons
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Setup icons
+   (use-package all-the-icons
+      :ensure t)
+   #+END_SRC
+
+** Set the theme
+   
+   #+BEGIN_SRC emacs-lisp
+   ;; Doom Themes
+   (use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  (doom-themes-treemacs-config))
+
+   #+END_SRC
+
+** Setup the modeline
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Doom modeline
+   (use-package doom-modeline
+   :ensure t
+   :init (doom-modeline-mode 1)
+   :config
+   (setq doom-modeline-height 35)                  ;; modeline height
+   ;; Display icons in the modeline
+   (setq doom-modeline-icon (display-graphic-p))
+   ;; Whether display the icon for `major-mode'. It respects `doom-modeline-icon'.
+   (setq doom-modeline-major-mode-icon t)
+   ;; The maximum displayed length of the branch name of version control.
+   (setq doom-modeline-vcs-max-length 50)
+   )
+   #+END_SRC
+
+
+* General Packages
+
+** Which Key
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Install which key for helping with keybindings
+   (use-package which-key
+   :ensure t
+   :config (which-key-mode))
+   #+END_SRC
+
+** Shell integrations
+   
+   #+BEGIN_SRC emacs-lisp
+   ;; Shell
+   (use-package exec-path-from-shell
+   :ensure t
+   :config
+   (when (memq window-system '(mac ns x))
+   (exec-path-from-shell-initialize)))
+   #+END_SRC
+
+** Git (Magit)
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Setup magit
+   (use-package magit
+   :ensure t
+   :config
+   (global-set-key (kbd "C-x g") 'magit-status))
+   #+END_SRC
+** Autocomplete
+   
+   #+BEGIN_SRC emacs-lisp
+   ;; Install helm-ag
+   (use-package helm-ag
+   :ensure t)
+   #+END_SRC
+
+** Projects
+   
+   #+BEGIN_SRC emacs-lisp
+   ;; Enable projectile
+   (use-package projectile
+   :ensure t
+   :config
+   ;; Tell projectile to search this folder for projects
+   (setq projectile-project-search-path '("~/code/" "~/wave/src"))
+   ;; Don't do autodiscover on startup
+   (setq projectile-auto-discover nil)
+   ;; change the prefix to super-p
+   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+   ;; sort by recent files
+   (setq projectile-sort-order 'recentf)
+   ;; activate projectile mode
+   (projectile-mode +1))
+
+   ;; Enable helm-projectile
+   (use-package helm-projectile
+   :ensure t
+   :config
+   (helm-projectile-on))
+   #+END_SRC
+
+** Sidebar
+   #+BEGIN_SRC emacs-lisp
+   ;; Install treemacs
+   (use-package treemacs
+   :ensure t
+   :bind
+   (:map global-map
+   ([f8] . treemacs)
+   ("M-<f8>" . treemacs-select-window))
+   :config
+   (setq treemacs-is-never-other-window t))
+
+   (use-package treemacs-projectile
+   :ensure t)
+   
+   #+END_SRC
+
+** Perspective
+   
+   #+BEGIN_SRC emacs-lisp
+
+   ;; Enable perspective
+   (use-package perspective
+   :ensure t
+   :config
+   (persp-mode))
+   #+END_SRC
+
+** Syntax Checking
+   #+BEGIN_SRC emacs-lisp
+   (use-package flycheck
+    :ensure t)
+   
+   #+END_SRC
+** Python
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Install elpy
+   (use-package elpy
+   :ensure t
+   :config
+   ;; Enable elpy
+   (elpy-enable))
+
+   ;; Enable Flycheck - remove flymake and replace it with fly check
+   (when (require 'flycheck nil t)
+   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+   (add-hook 'elpy-mode-hook 'flycheck-mode))
+   
+   #+END_SRC
+
