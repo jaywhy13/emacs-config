@@ -57,10 +57,15 @@
 ## Extensions
 
 - Look and feel
-  - Material theme
+  - [Doom theme](https://github.com/hlissner/emacs-doom-themes)
 - Project Management
-  - Projectile - manage project
-    - Counsel-Projectile - better searching (fuzzy load projects and files)
+  - Projectile - manage projects
+    - Helm-Projectile - better searching (fuzzy load projects and files)
+  - Perspective
+    - Session management, helps keeps the list of buffers restricted to the
+      perspective. `perspective-projectile` works in tandem with `projectile` to
+      keep the buffers limited to only the ones for the selected project.
+
 - Python
   - Elpy - virtual env support, autocompletion, jump to defn, etc... (disabled flymake module)
   - Blacken - formatting with black
@@ -70,4 +75,4 @@
 - https://melpa.org/packages/ivy-20160818.708.tar: Not found. Package listing
   was out of date. Was resolved by doing `M-x package-refresh-contents`
 - `neotree-projectile-action` is not reliably triggered when changing projects
-  with Projectile.
+	with Projectile.
