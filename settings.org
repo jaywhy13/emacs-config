@@ -208,12 +208,20 @@ Emacs Configuration
    :ensure t
    :config
    ;; Enable elpy
-   (elpy-enable))
+   (elpy-enable)
 
    ;; Enable Flycheck - remove flymake and replace it with fly check
    (when (require 'flycheck nil t)
    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
    (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+   (define-key elpy-mode-map (kbd "C-M-l") 'elpy-goto-assignment)
+   (define-key elpy-mode-map (kbd "C--") 'pop-tag-mark)
+   (define-key elpy-mode-map (kbd "C-M-f") 'elpy-occur-definitions)
+
+   )
+
+   
    
    #+END_SRC
 
