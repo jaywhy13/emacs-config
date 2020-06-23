@@ -48,7 +48,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (persp-projectile perspective pyenv-mode treemacs-projectile treemacs exec-path-from-shell helm-ag helm-projectile doom-modeline material-theme better-defaults))))
+    (vterm persp-projectile perspective pyenv-mode treemacs-projectile treemacs exec-path-from-shell helm-ag helm-projectile doom-modeline material-theme better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
