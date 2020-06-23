@@ -104,15 +104,6 @@ Emacs Configuration
 
 * General Packages
 
-** Which Key
-
-   #+BEGIN_SRC emacs-lisp
-   ;; Install which key for helping with keybindings
-   (use-package which-key
-   :ensure t
-   :config (which-key-mode))
-   #+END_SRC
-
 ** Shell integrations
    
    #+BEGIN_SRC emacs-lisp
@@ -122,6 +113,15 @@ Emacs Configuration
    :config
    (when (memq window-system '(mac ns x))
    (exec-path-from-shell-initialize)))
+   #+END_SRC
+
+** Which Key
+
+   #+BEGIN_SRC emacs-lisp
+   ;; Install which key for helping with keybindings
+   (use-package which-key
+   :ensure t
+   :config (which-key-mode))
    #+END_SRC
 
 ** Git (Magit)
