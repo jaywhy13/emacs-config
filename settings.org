@@ -183,15 +183,7 @@ Emacs Configuration
    
    #+END_SRC
 
-** Perspective
-   
-   #+BEGIN_SRC emacs-lisp
 
-   ;; Enable perspective
-   (use-package perspective
-   :ensure t
-   :config
-   (persp-mode))
 * Programming
 ** Formatters
    #+BEGIN_SRC emacs-lisp
