@@ -192,6 +192,12 @@ Emacs Configuration
    :ensure t
    :config
    (persp-mode))
+* Programming
+** Formatters
+   #+BEGIN_SRC emacs-lisp
+   ;; Install package for Black
+   (use-package blacken
+    :ensure t)
    #+END_SRC
 
 ** Syntax Checking
