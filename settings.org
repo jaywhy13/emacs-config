@@ -1,6 +1,5 @@
 Emacs Configuration
 
-
 * General Settings
 
 ** Don't show startup message
@@ -43,7 +42,11 @@ Emacs Configuration
    #+BEGIN_SRC emacs-lisp
    (setq
      backup-directory-alist
-     '(("." . "~/.saves/")))    ; don't litter my fs tree
+     '(("." . "~/.saves/")))    ; don't litter mby fs tree
+   #+END_SRC
+** Show matching params
+   #+BEGIN_SRC emacs-lisp
+   (show-paren-mode 1)
    #+END_SRC
 
 
