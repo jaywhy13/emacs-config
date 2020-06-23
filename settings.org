@@ -179,7 +179,8 @@ Emacs Configuration
    (setq treemacs-is-never-other-window t))
 
    (use-package treemacs-projectile
-   :ensure t)
+   :ensure t
+   :after treemacs projectile)
    
    #+END_SRC
 
@@ -198,6 +199,7 @@ Emacs Configuration
     :ensure t)
    
    #+END_SRC
+
 ** Python
 
    #+BEGIN_SRC emacs-lisp
