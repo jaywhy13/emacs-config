@@ -185,6 +185,19 @@ Emacs Configuration
    #+END_SRC
 
 
+* Navigation
+
+** Expand region selection
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package expand-region
+   :ensure t
+   :config
+
+   (global-set-key (kbd "C-M-=") 'er/expand-region)
+   (global-set-key (kbd "C-M--") 'er/contract-region))
+   #+END_SRC
+
 * Programming
 ** Formatters
    #+BEGIN_SRC emacs-lisp
