@@ -132,7 +132,17 @@ Emacs Configuration
    :ensure t
    :config
    (global-set-key (kbd "C-x g") 'magit-status))
+   
+   ;; Setup git links
+   (use-package git-link
+   :ensure t
+   :config 
+   (global-set-key (kbd "C-c g l") 'git-link))
+
    #+END_SRC
+
+
+
 ** Autocomplete
    
    #+BEGIN_SRC emacs-lisp
@@ -159,11 +169,14 @@ Emacs Configuration
    ;; activate projectile mode
    (projectile-mode +1))
 
+
    ;; Enable helm-projectile
    (use-package helm-projectile
    :ensure t
    :config
-   (helm-projectile-on))
+   (helm-projectile-on)
+   ;; show current files after switching project
+   (setq projectile-switch-project-action 'helm-projectile-find-file))
    #+END_SRC
 
 ** Sidebar
@@ -196,6 +209,19 @@ Emacs Configuration
 
    (global-set-key (kbd "C-M-=") 'er/expand-region)
    (global-set-key (kbd "C-M--") 'er/contract-region))
+   #+END_SRC
+
+** Multiple cursors
+
+   #+BEGIN_SRC emacs-lisp
+   (use-package multiple-cursors
+   :ensure t
+   :config 
+
+   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+   
    #+END_SRC
 
 * Programming
